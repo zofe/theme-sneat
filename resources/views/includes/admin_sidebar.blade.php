@@ -4,11 +4,14 @@
 @endphp
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand">
-        <a href="{{ $homeRoute }}" class="app-brand-link">
+        @php($brand = config('rapyd.layout.brand') ?: config('app.name'))
+        <a href="{{ $homeRoute }}" class="app-brand-link gap-2">
             @if(config('rapyd.layout.logo_sidebar'))
-                <img src="{{ config('rapyd.layout.logo_sidebar') }}" class="img-fluid" style="max-height: 40px" alt="{{ config('rapyd.layout.brand') ?: config('app.name') }}">
+                <span class="app-brand-logo"><img src="{{ config('rapyd.layout.logo_sidebar') }}" alt="{{ $brand }}"></span>
             @else
-                <span class="app-brand-text menu-text fw-bold text-primary">{{ config('rapyd.layout.brand') ?: config('app.name') }}</span>
+                {{-- the initial stays when the menu is collapsed to icons, the text fades out (Sneat's app-brand rules) --}}
+                <span class="app-brand-logo"><span class="app-brand-initial">{{ mb_strtoupper(mb_substr(trim($brand), 0, 1)) }}</span></span>
+                <span class="app-brand-text menu-text fw-bold text-primary">{{ $brand }}</span>
             @endif
         </a>
         <a href="#" class="layout-menu-toggle menu-link text-large ms-auto" aria-label="Toggle menu">

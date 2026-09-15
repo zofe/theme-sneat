@@ -14,7 +14,12 @@
 
 // Brand block of the menu (Sneat's demo.css sizes it in the demo only)
 .menu .app-brand { height: 64px; margin-top: 12px; }
-.app-brand-text  { font-size: 1.5rem; letter-spacing: -.5px; }
+.app-brand-text  { font-size: 1.5rem; letter-spacing: -.5px; white-space: nowrap; overflow: hidden; }
+.app-brand-logo img { height: 32px; width: auto; display: block; }
+.app-brand-initial {
+    display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: .5rem;
+    background: var(--bs-primary); color: var(--rpd-primary-contrast, #fff); font-weight: 700; font-size: 1.1rem;
+}
 .menu-vertical .menu-icon { display: inline-flex; width: 1.5rem; justify-content: center; }
 
 // ── Dark mode ────────────────────────────────────────────────────────────────
@@ -55,6 +60,8 @@ html[data-bs-theme=dark] {
     }
     .layout-navbar .nav-link, .layout-navbar .dropdown-toggle { color: #d3d1e6; }
 }
+// The round toggle on the menu edge: Sneat sizes the <i> as a 1.375rem square for its SVG icons; centre the Font Awesome glyph in it
+.layout-menu .layout-menu-toggle i { display: inline-flex; align-items: center; justify-content: center; font-size: .8rem; }
 // Collapsed menu (xl and up): the round toggle on the menu edge points the other way
 .layout-menu-collapsed:not(.layout-menu-hover) .layout-menu-toggle i { transform: rotate(180deg); }
 .layout-menu-toggle i { transition: transform .2s; }

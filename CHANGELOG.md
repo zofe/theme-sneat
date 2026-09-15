@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.3] - 2026-09-15
+
+- Menu toggle: the chevron is centred in the round button; the brand keeps its initial when the menu is collapsed to icons.
+
 ## [0.1.2] - 2026-09-15
 
 - The guest Login link of the admin navbar follows `RAPYD_AUTH_LINKS`.
