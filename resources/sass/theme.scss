@@ -12,6 +12,14 @@
 .bg-navbar-theme   { background-color: var(--rpd-topbar-bg, var(--bs-navbar-bg)) !important; }
 .content-wrapper   { background: var(--rpd-content-bg, transparent); }
 
+// Menu feedback: Sneat's hover (#f2f3f3 on white) is too faint to tell what is under the pointer.
+// Hover = a primary tint with the primary colour, active = the primary-subtle block (Sneat's own).
+:root {
+    --bs-menu-hover-bg: color-mix(in srgb, var(--bs-primary) 10%, transparent);
+    --bs-menu-hover-color: var(--bs-primary);
+}
+.menu-vertical .menu-link { transition: background-color .12s, color .12s; }
+
 // Brand block of the menu (Sneat's demo.css sizes it in the demo only)
 .menu .app-brand { height: 64px; margin-top: 12px; }
 .app-brand-text  { font-size: 1.5rem; letter-spacing: -.5px; white-space: nowrap; overflow: hidden; }
@@ -35,9 +43,14 @@ html[data-bs-theme=dark] {
     --bs-heading-color: #e1def5;
     --bs-menu-bg: #2f3349;
     --bs-menu-color: #d3d1e6;
-    --bs-menu-hover-bg: rgba(225, 222, 245, .06);
-    --bs-menu-hover-color: #e1def5;
-    --bs-menu-active-color: #fff;
+    --bs-menu-hover-bg: rgba(255, 255, 255, .12);
+    --bs-menu-hover-color: #fff;
+    // active item: readable primary on the dark surface (Sneat's primary-bg-subtle is primary on primary in the dark)
+    --bs-menu-active-bg: color-mix(in srgb, var(--bs-primary) 28%, #2f3349);
+    --bs-menu-active-color: color-mix(in srgb, var(--bs-primary) 45%, white);
+    --bs-menu-sub-active-bg: color-mix(in srgb, var(--bs-primary) 20%, #2f3349);
+    --bs-menu-sub-active-color: color-mix(in srgb, var(--bs-primary) 45%, white);
+    --bs-primary-bg-subtle: color-mix(in srgb, var(--bs-primary) 28%, #2f3349);
     --bs-navbar-bg: #2f3349;
     --bs-navbar-border-color: #2f3349;
     --bs-card-bg: #2f3349;
@@ -72,5 +85,18 @@ html[data-bs-theme=dark] {
 .auth-card-narrow { max-width: 460px; }
 
 // ── Small fixes for rapyd components inside Sneat ───────────────────────────
+// Dropdowns: the rapyd tokens paint the active item with the primary colour and Sneat gives it primary text too.
+.dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
+    background-color: var(--bs-primary) !important;
+    color: var(--rpd-primary-contrast, #fff) !important;
+}
+.dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus {
+    background-color: color-mix(in srgb, var(--bs-primary) 10%, transparent);
+    color: var(--bs-primary);
+}
+html[data-bs-theme=dark] .dropdown-menu .dropdown-item:hover, html[data-bs-theme=dark] .dropdown-menu .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, .12);
+    color: #fff;
+}
 .card .rpd-table .table { margin-bottom: 0; }
 .badge:is(.bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-info, .bg-dark) { color: #fff; }

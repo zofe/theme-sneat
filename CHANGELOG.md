@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.4] - 2026-09-15
+
+- Dropdowns: the active item is white on the primary colour (it was primary on primary), hover is a primary tint.
+- Vertical menu: visible hover (primary tint) and a readable active item in dark mode.
+
 ## [0.1.3] - 2026-09-15
 
 - Menu toggle: the chevron is centred in the round button; the brand keeps its initial when the menu is collapsed to icons.
