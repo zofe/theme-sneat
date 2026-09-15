@@ -1,0 +1,19 @@
+{
+    "name": "zofe/theme-sneat",
+    "description": "Sneat theme for rapyd-admin: the Sneat admin template (Bootstrap 5.3, MIT) as the admin, public and auth layouts.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": ["rapyd-admin", "theme", "sneat", "bootstrap", "laravel"],
+    "require": {
+        "php": "^8.2",
+        "zofe/rapyd-admin": "^9.13"
+    },
+    "autoload": {
+        "psr-4": { "Zofe\\ThemeSneat\\": "src/" }
+    },
+    "extra": {
+        "laravel": { "providers": ["Zofe\\ThemeSneat\\ThemeServiceProvider"] }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

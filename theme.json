@@ -1,0 +1,9 @@
+{
+    "name": "sneat",
+    "title": "Sneat",
+    "version": "0.1.0",
+    "description": "Sneat admin template (vertical menu) as a rapyd-admin theme",
+    "screenshot": "screenshot.png",
+    "rapyd-admin": "^9.13",
+    "template": { "name": "Sneat Free", "version": "3.0.0", "url": "https://github.com/themeselection/sneat-bootstrap-html-admin-template-free", "license": "MIT" }
+}

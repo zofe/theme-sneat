@@ -1,0 +1,69 @@
+// Sneat core (MIT, resources/sass/sneat): Bootstrap 5.3 + Sneat's extended components + layout, menu, navbar.
+// Compiled against the Bootstrap of rapyd-admin (vite alias), variables overridable in sneat/_custom-variables.
+@import 'sneat/core';
+
+// rapyd components (tables, views, forms, tom-select, design tokens)
+@import '@rapyd/sass/rapyd-base';
+
+// ── Design tokens ────────────────────────────────────────────────────────────
+// The runtime palette (config rapyd.layout.palette) writes --bs-primary & co. and the
+// --rpd-* surfaces; Sneat reads its own --bs-menu-bg / --bs-navbar-bg: map one onto the other.
+.bg-menu-theme     { background-color: var(--rpd-sidebar-bg, var(--bs-menu-bg)) !important; }
+.bg-navbar-theme   { background-color: var(--rpd-topbar-bg, var(--bs-navbar-bg)) !important; }
+.content-wrapper   { background: var(--rpd-content-bg, transparent); }
+
+// Brand block of the menu (Sneat's demo.css sizes it in the demo only)
+.menu .app-brand { height: 64px; margin-top: 12px; }
+.app-brand-text  { font-size: 1.5rem; letter-spacing: -.5px; }
+.menu-vertical .menu-icon { display: inline-flex; width: 1.5rem; justify-content: center; }
+
+// ── Dark mode ────────────────────────────────────────────────────────────────
+// Sneat free ships the light style only; Bootstrap 5.3 handles its own components through
+// data-bs-theme, these are Sneat's surfaces (toggled by the rapyd theme switcher).
+html[data-bs-theme=dark] {
+    --bs-body-bg: #25293c;
+    --bs-paper-bg: #2f3349;
+    --bs-paper-bg-rgb: 47, 51, 73;
+    --bs-base-color: #e1def5;
+    --bs-base-color-rgb: 225, 222, 245;
+    --bs-body-color: #d3d1e6;
+    --bs-heading-color: #e1def5;
+    --bs-menu-bg: #2f3349;
+    --bs-menu-color: #d3d1e6;
+    --bs-menu-hover-bg: rgba(225, 222, 245, .06);
+    --bs-menu-hover-color: #e1def5;
+    --bs-menu-active-color: #fff;
+    --bs-navbar-bg: #2f3349;
+    --bs-navbar-border-color: #2f3349;
+    --bs-card-bg: #2f3349;
+    --bs-border-color: #434968;
+    --bs-secondary-color: rgba(211, 209, 230, .6);
+    --bs-tertiary-bg: #3a3f5c;
+    --bs-secondary-bg: #363b54;
+    --bs-gray-60: rgba(225, 222, 245, .06);
+    --bs-gray-80: rgba(225, 222, 245, .08);
+    --bs-box-shadow: 0 .25rem 1rem rgba(15, 20, 34, .55);
+    .card, .dropdown-menu, .modal-content, .navbar-detached, .footer { box-shadow: 0 .25rem 1rem rgba(15, 20, 34, .45); }
+    .layout-navbar { --bs-navbar-bg: #2f3349; }
+    .form-control, .form-select { background-color: #2f3349; color: #d3d1e6; border-color: #434968; }
+    .table { --bs-table-bg: transparent; --bs-table-color: #d3d1e6; --bs-table-border-color: #434968; }
+    .text-heading, .menu-header { color: #e1def5; }
+    // outline buttons on a dark surface (Reset, secondary actions)
+    .btn-outline-dark, .btn-outline-secondary {
+        --bs-btn-color: #d3d1e6; --bs-btn-border-color: #5a5f7d;
+        --bs-btn-hover-color: #fff; --bs-btn-hover-bg: rgba(225, 222, 245, .08); --bs-btn-hover-border-color: #7a7fa0;
+    }
+    .layout-navbar .nav-link, .layout-navbar .dropdown-toggle { color: #d3d1e6; }
+}
+// Collapsed menu (xl and up): the round toggle on the menu edge points the other way
+.layout-menu-collapsed:not(.layout-menu-hover) .layout-menu-toggle i { transform: rotate(180deg); }
+.layout-menu-toggle i { transition: transform .2s; }
+
+// ── Auth pages (login, register, password, 2FA) ─────────────────────────────
+.auth-body { background-color: var(--bs-body-bg); }
+.auth-card { max-width: 900px; }
+.auth-card-narrow { max-width: 460px; }
+
+// ── Small fixes for rapyd components inside Sneat ───────────────────────────
+.card .rpd-table .table { margin-bottom: 0; }
+.badge:is(.bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-info, .bg-dark) { color: #fff; }
