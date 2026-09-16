@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.5] - 2026-09-16
+
+- Rebuilt on rapyd-admin 9.13.3: row separators and text utilities of the module views.
+
 ## [0.1.4] - 2026-09-15
 
 - Dropdowns: the active item is white on the primary colour (it was primary on primary), hover is a primary tint.
