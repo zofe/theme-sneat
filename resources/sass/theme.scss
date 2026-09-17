@@ -85,6 +85,9 @@ html[data-bs-theme=dark] {
 .auth-card-narrow { max-width: 460px; }
 
 // ── Small fixes for rapyd components inside Sneat ───────────────────────────
+// Sneat pads table cells generously and centres them vertically with a tall line box: compact rows.
+.table > :not(caption) > * > * { line-height: 1.35; }
+.table th { white-space: nowrap; }
 // Dropdowns: the rapyd tokens paint the active item with the primary colour and Sneat gives it primary text too.
 .dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
     background-color: var(--bs-primary) !important;

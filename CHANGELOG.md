@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.6] - 2026-09-18
+
+- Denser: 14px base font, smaller headings, tighter table cells, inputs and cards, a 15rem menu (`_custom-variables`).
+
 ## [0.1.5] - 2026-09-16
 
 - Rebuilt on rapyd-admin 9.13.3: row separators and text utilities of the module views.
