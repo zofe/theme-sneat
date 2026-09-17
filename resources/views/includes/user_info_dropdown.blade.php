@@ -1,7 +1,7 @@
 <li class="nav-item navbar-dropdown dropdown-user dropdown">
     <a class="nav-link dropdown-toggle hide-arrow p-0 d-flex align-items-center" href="#" data-bs-toggle="dropdown" aria-label="Open user menu">
-        <div class="avatar">
-            <img src="{{ Auth::user()->avatar ? asset('storage/users/'.Auth::user()->id.'/photos/avatar.jpg') : asset('vendor/rapyd/img/user-account-icon.png') }}" alt="" class="w-px-40 h-auto rounded-circle">
+        <div class="avatar" style="width: 30px; height: 30px">
+            <img src="{{ Auth::user()->avatar ? asset('storage/users/'.Auth::user()->id.'/photos/avatar.jpg') : asset('vendor/rapyd/img/user-account-icon.png') }}" alt="" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover">
         </div>
         <div class="d-none d-xl-block ps-2 lh-1">
             <div class="fw-medium">{{ Auth::user()->name }}</div>

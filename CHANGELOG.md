@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.8] - 2026-09-18
+
+- Public navbar: the menu items have their padding back (they touched each other); thin dividers between the modules' groups in the menu; a smaller avatar in the navbar.
+
 ## [0.1.7] - 2026-09-18
 
 - Navbars: the items on the right are spaced (gap) instead of touching each other.

@@ -20,6 +20,11 @@
 }
 .menu-vertical .menu-link { transition: background-color .12s, color .12s; }
 
+// The modules' menus separate their groups with <hr class="sidebar-divider"> (the bundled look):
+// in Sneat a thin line with the same rhythm as the items, not a gap.
+.menu-inner > hr.sidebar-divider { margin: .5rem 1rem; border-top: 1px solid var(--bs-border-color); opacity: 1; }
+.menu-inner > hr.sidebar-divider + hr.sidebar-divider { display: none; }
+
 // Brand block of the menu (Sneat's demo.css sizes it in the demo only)
 .menu .app-brand { height: 64px; margin-top: 12px; }
 .app-brand-text  { font-size: 1.5rem; letter-spacing: -.5px; white-space: nowrap; overflow: hidden; }
@@ -83,6 +88,16 @@ html[data-bs-theme=dark] {
 .auth-body { background-color: var(--bs-body-bg); }
 .auth-card { max-width: 900px; }
 .auth-card-narrow { max-width: 460px; }
+
+// Public navbar: the rpd nav-item / nav-link components are overridden by this theme as Sneat menu
+// items (for the vertical menu); in a horizontal navbar they are plain links with their padding.
+.navbar .navbar-nav > .menu-item { list-style: none; }
+.navbar .navbar-nav > .menu-item > .menu-link,
+.navbar:not(.layout-navbar) .navbar-nav .nav-item > .nav-link {
+    display: inline-flex; align-items: center; padding: .5rem .75rem; margin: 0 .25rem; color: var(--bs-body-color); text-decoration: none;
+}
+.navbar .navbar-nav > .menu-item > .menu-link:hover, .navbar .navbar-nav > .menu-item.active > .menu-link,
+.navbar:not(.layout-navbar) .navbar-nav .nav-item > .nav-link.active { color: var(--bs-primary); }
 
 // Right side of the navbars: the items breathe (gap on the list), the icons keep a hit area.
 .layout-navbar .navbar-nav.flex-row > .nav-item > .nav-link, .navbar .navbar-nav.flex-row > .nav-item > .nav-link { display: inline-flex; align-items: center; min-height: 2rem; }
