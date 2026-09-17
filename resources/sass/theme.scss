@@ -84,6 +84,9 @@ html[data-bs-theme=dark] {
 .auth-card { max-width: 900px; }
 .auth-card-narrow { max-width: 460px; }
 
+// Right side of the navbars: the items breathe (gap on the list), the icons keep a hit area.
+.layout-navbar .navbar-nav.flex-row > .nav-item > .nav-link, .navbar .navbar-nav.flex-row > .nav-item > .nav-link { display: inline-flex; align-items: center; min-height: 2rem; }
+
 // ── Small fixes for rapyd components inside Sneat ───────────────────────────
 // Sneat pads table cells generously and centres them vertically with a tall line box: compact rows.
 .table > :not(caption) > * > * { line-height: 1.35; }

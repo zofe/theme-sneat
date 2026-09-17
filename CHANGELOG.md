@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.7] - 2026-09-18
+
+- Navbars: the items on the right are spaced (gap) instead of touching each other.
+
 ## [0.1.6] - 2026-09-18
 
 - Denser: 14px base font, smaller headings, tighter table cells, inputs and cards, a 15rem menu (`_custom-variables`).

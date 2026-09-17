@@ -1,5 +1,5 @@
 {{-- Light / dark toggle: flips the current look (system preference included), the icon shows what the click gives. --}}
-<li class="nav-item me-3" x-data="{
+<li class="nav-item" x-data="{
         dark: document.documentElement.classList.contains('dark'),
         toggle() {
             localStorage.theme = this.dark ? 'light' : 'dark';

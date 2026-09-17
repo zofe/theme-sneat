@@ -11,11 +11,11 @@
             @endif
         </div>
 
-        <ul class="navbar-nav flex-row align-items-center ms-md-auto">
+        <ul class="navbar-nav flex-row align-items-center ms-md-auto gap-3">
             @stack('navbar_right')
 
             @if(config('app.locales'))
-                <li class="nav-item dropdown me-3">
+                <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle hide-arrow p-0" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="{{ asset('vendor/rapyd/img/'.app()->getLocale().'.svg') }}" width="18" alt="{{ app()->getLocale() }}">
                     </a>
@@ -28,7 +28,7 @@
             @endif
 
             @if(Route::has('admin.home') && Route::has('home'))
-                <li class="nav-item d-none d-md-block me-3"><a class="nav-link p-0" href="{{ route('home') }}">{{ __('Home') }}</a></li>
+                <li class="nav-item d-none d-md-block"><a class="nav-link p-0" href="{{ route('home') }}">{{ __('Home') }}</a></li>
             @endif
 
             @include('layout::includes.theme_switcher')
