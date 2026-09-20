@@ -1,6 +1,6 @@
 {{-- Sneat vertical menu: brand, the modules' menus (rpd nav-* components rendered as Sneat menu items) --}}
 @php
-    $homeRoute = Route::has('admin.home') ? route('admin.home') : (Route::has('home') ? route('home') : url('/'));
+    $homeRoute = function_exists('rapyd_brand_url') ? rapyd_brand_url() : (Route::has('admin.home') ? route('admin.home') : (Route::has('home') ? route('home') : url('/')));
 @endphp
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand">
